@@ -1,19 +1,17 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Main from "../pages/Main";
-import Information from "../pages/Information";
-import {Provider} from "react-redux";
-import {store} from "../../engine/init/redux";
+import Character from "../pages/Character";
 
 export function App() {
     return (
-        <Provider store={store}>
+        <div>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Main/>}/>
-                    <Route path="/information" element={<Information/>}/>
+                    <Route path="/character/:id" element={<Character/>}/>
                 </Routes>
             </BrowserRouter>
-        </Provider>
+        </div>
     )
 }

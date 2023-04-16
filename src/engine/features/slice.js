@@ -4,14 +4,14 @@ const characters = createSlice({
     name: 'characters',
     initialState: {
         items: [],
+        searchQuery: '',
     },
     reducers: {
-        setItem: (state,action)=>{
-            const { payload } = action;
-            state.items = payload;
+        searchCharacters: (state,action) => {
+            state.searchQuery = action.payload;
         }
     }
 })
 
-export const {setItem}= characters.actions;
+export const {searchCharacters}= characters.actions;
 export const charactersReducer= characters.reducer;
